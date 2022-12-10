@@ -9,7 +9,13 @@ console.log(currentDay);
 
 $( "#currentDay" ).append(currentDay);
 
-// create container using bootstrap & js
+// target background-color
+
+// -   if planner hour is in past (i.e. lower/less than current hour) then grey (.past)
+
+// -   if planner hour is at the present (i.e equal to current hour) then red (.present)
+
+// -   if planner hour is in the future (i.e. greater than the current hour) then green (.future)
 
 
 
