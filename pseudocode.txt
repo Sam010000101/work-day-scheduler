@@ -4,17 +4,35 @@ Action Plan
 The app should:
 
     1. Display the current day at the top of the calender when a user opens the planner.
+       
+       - refer to moment.js (7.3)
+       - Append (7.1)
+
 
     2. Present timeblocks for standard business hours when the user scrolls down.
+       
+        - refer to Append, prepend, and replace elements to the DOM (7.1)
+
 
     3. Color-code each timeblock based on past, present, and future when the timeblock is viewed.
+       
+        - attributes (6.3)
+
 
     4. Allow a user to enter an event when they click a timeblock
+       
+        - user inputs
+        - events (6.2)
+
 
     5. Save the event in local storage when the save button is clicked in that timeblock.
+       
+        - refer to client side storage slides & examples (6.3)
+
 
     6. Persist events between refreshes of a page
-    - refer to client side storage slides & examples (6.3)
+       
+        - refer to client side storage slides & examples (6.3)
 
 
 Planner App Pseudocode
