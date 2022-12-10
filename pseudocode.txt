@@ -18,6 +18,12 @@ The app should:
        
         - attributes (6.3)
 
+        target background-color
+        -   if planner hour is in past (i.e. lower/less than current hour) then grey (.past)
+        -   if planner hour is at the present (i.e equal to current hour) then red (.present)
+        -   if planner hour is in the future (i.e. greater than the current hour) then green (.future)
+
+
 
     4. Allow a user to enter an event when they click a timeblock
        
