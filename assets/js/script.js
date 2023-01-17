@@ -123,13 +123,27 @@ var timeBlock7Input = $("#timeBlock-7");
 var timeBlock8Input = $("#timeBlock-8");
 var timeBlock9Input = $("#timeBlock-9");
 
-var timBlockInput = [ timeBlock1Input, timeBlock2Input, timeBlock3Input, timeBlock4Input, timeBlock5Input, timeBlock6Input, timeBlock7Input, timeBlock8Input, timeBlock9Input];
+var timeBlockInput = [ timeBlock1Input, timeBlock2Input, timeBlock3Input, timeBlock4Input, timeBlock5Input, timeBlock6Input, timeBlock7Input, timeBlock8Input, timeBlock9Input];
 
+for (var i = 0; i < timeBlockInput.length; i++) {
+        console.log(timeBlockInput[i]);
+}
 
+var timeBlock1Data = window.localStorage.getItem(officeTimes[0]);
+var timeBlock2Data = window.localStorage.getItem(officeTimes[1]);
+var timeBlock3Data = window.localStorage.getItem(officeTimes[2]);
+var timeBlock4Data = window.localStorage.getItem(officeTimes[3]);
+var timeBlock5Data = window.localStorage.getItem(officeTimes[4]);
+var timeBlock6Data = window.localStorage.getItem(officeTimes[5]);
+var timeBlock7Data = window.localStorage.getItem(officeTimes[6]);
+var timeBlock8Data = window.localStorage.getItem(officeTimes[7]);
+var timeBlock9Data = window.localStorage.getItem(officeTimes[8]);
 
+var timeBlockData = [ timeBlock1Data, timeBlock2Data, timeBlock3Data, timeBlock4Data, timeBlock5Data, timeBlock6Data, timeBlock7Data, timeBlock8Data, timeBlock9Data];
 
-
-
+for (var i = 0; i < timeBlockData.length; i++) {
+        console.log(timeBlockData[i]);
+}
 
 
 // timeBlock1Input.textContent = lastInput.timeBlock1Input;
