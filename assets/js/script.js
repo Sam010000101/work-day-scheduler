@@ -89,38 +89,38 @@ if (currentHourEl > timeBlockHrEl[i]) {
 
 // 4. Allow a user to enter an event when they click a timeblock
 
-
-
 // 5. Save the event in local storage when the save button is clicked in that timeblock.
 
-
-// var timeBlock1Input = document.getElementById("timeBlock-1");
-
-
+// variable to access the timeblock input
 var timeBlock1Input = $("#timeBlock-1");
-
-var timeBlock1Data = window.localStorage.getItem("timeBlock-1");
-
+// variable to get the local storage Key as named according to the first object in the array "var officeTimes"
+var timeBlock1Data = window.localStorage.getItem(officeTimes[0]);
+// console.log(window.localStorage);
+// Set the value for the input for id "#timeBlock-1" 
 timeBlock1Input.val(timeBlock1Data);
 
-// look at using a for loop
 
-
+// variable to access the timeblock button
 var timeBlock1Btn = document.getElementById("timeBlock-1-Btn");
-
+// Event listener for the timeblock button to 
 timeBlock1Btn.addEventListener("click", addAnswerToLocalStorage);
-
+// Function to add input to local storage
 function addAnswerToLocalStorage() {
         let value = timeBlock1Input.val();
-localStorage.setItem("timeBlock-1", value);
+        // Set Time block input key to #timeBlock-1" input and name it according to the first object in the array "var officeTimes"
+localStorage.setItem(officeTimes[0], value);
 }
+// var lastInput = localStorage.getItem("timeBlock-1");
 
 
-var lastInput = localStorage.getItem("timeBlock-1");
+
+// look at using a for loop for the above to work for all input fields
+
+
+
 // timeBlock1Input.textContent = lastInput.timeBlock1Input;
 
-
-console.log(localStorage);
+// console.log(localStorage);
 
 // get most recent submission
 
@@ -133,10 +133,6 @@ console.log(localStorage);
 //         timeBlock1Input.textContent = timeBlock1Input;
 
 //       }
-
-
-
-
 
 
 // var timeBlock1Input = document.querySelector("#timeBlock-1");
