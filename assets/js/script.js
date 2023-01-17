@@ -99,7 +99,6 @@ var timeBlock1Data = window.localStorage.getItem(officeTimes[0]);
 // Set the value for the input for id "#timeBlock-1" 
 timeBlock1Input.val(timeBlock1Data);
 
-
 // variable to access the timeblock button
 var timeBlock1Btn = document.getElementById("timeBlock-1-Btn");
 // Event listener for the timeblock button to 
@@ -112,9 +111,24 @@ localStorage.setItem(officeTimes[0], value);
 }
 // var lastInput = localStorage.getItem("timeBlock-1");
 
+// Use a for loop for the above to work for all input fields
+
+var timeBlock1Input = $("#timeBlock-1");
+var timeBlock2Input = $("#timeBlock-2");
+var timeBlock3Input = $("#timeBlock-3");
+var timeBlock4Input = $("#timeBlock-4");
+var timeBlock5Input = $("#timeBlock-5");
+var timeBlock6Input = $("#timeBlock-6");
+var timeBlock7Input = $("#timeBlock-7");
+var timeBlock8Input = $("#timeBlock-8");
+var timeBlock9Input = $("#timeBlock-9");
+
+var timBlockInput = [ timeBlock1Input, timeBlock2Input, timeBlock3Input, timeBlock4Input, timeBlock5Input, timeBlock6Input, timeBlock7Input, timeBlock8Input, timeBlock9Input];
 
 
-// look at using a for loop for the above to work for all input fields
+
+
+
 
 
 
