@@ -93,27 +93,6 @@ if (currentHourEl > timeBlockHrEl[i]) {
 
 // variable to access the timeblock input
 var timeBlock1Input = $("#timeBlock-1");
-// variable to get the local storage Key as named according to the first object in the array "var officeTimes"
-var timeBlock1Data = window.localStorage.getItem(officeTimes[0]);
-// console.log(window.localStorage);
-// Set the value for the input for id "#timeBlock-1" 
-timeBlock1Input.val(timeBlock1Data);
-
-// variable to access the timeblock button
-var timeBlock1Btn = document.getElementById("timeBlock-1-Btn");
-// Event listener for the timeblock button to 
-timeBlock1Btn.addEventListener("click", addAnswerToLocalStorage);
-// Function to add input to local storage
-function addAnswerToLocalStorage() {
-        let value = timeBlock1Input.val();
-        // Set Time block input key to #timeBlock-1" input and name it according to the first object in the array "var officeTimes"
-localStorage.setItem(officeTimes[0], value);
-}
-// var lastInput = localStorage.getItem("timeBlock-1");
-
-// Use a for loop for the above to work for all input fields
-
-var timeBlock1Input = $("#timeBlock-1");
 var timeBlock2Input = $("#timeBlock-2");
 var timeBlock3Input = $("#timeBlock-3");
 var timeBlock4Input = $("#timeBlock-4");
@@ -122,13 +101,7 @@ var timeBlock6Input = $("#timeBlock-6");
 var timeBlock7Input = $("#timeBlock-7");
 var timeBlock8Input = $("#timeBlock-8");
 var timeBlock9Input = $("#timeBlock-9");
-
-var timeBlockInput = [ timeBlock1Input, timeBlock2Input, timeBlock3Input, timeBlock4Input, timeBlock5Input, timeBlock6Input, timeBlock7Input, timeBlock8Input, timeBlock9Input];
-
-for (var i = 0; i < timeBlockInput.length; i++) {
-        console.log(timeBlockInput[i]);
-}
-
+// variable to get the local storage Key as named according to the first object in the array "var officeTimes"
 var timeBlock1Data = window.localStorage.getItem(officeTimes[0]);
 var timeBlock2Data = window.localStorage.getItem(officeTimes[1]);
 var timeBlock3Data = window.localStorage.getItem(officeTimes[2]);
@@ -138,12 +111,105 @@ var timeBlock6Data = window.localStorage.getItem(officeTimes[5]);
 var timeBlock7Data = window.localStorage.getItem(officeTimes[6]);
 var timeBlock8Data = window.localStorage.getItem(officeTimes[7]);
 var timeBlock9Data = window.localStorage.getItem(officeTimes[8]);
+// console.log(window.localStorage);
+// Set the value for the input for id "#timeBlock-1" 
+timeBlock1Input.val(timeBlock1Data);
+timeBlock2Input.val(timeBlock2Data);
+timeBlock3Input.val(timeBlock3Data);
+timeBlock4Input.val(timeBlock4Data);
+timeBlock5Input.val(timeBlock5Data);
+timeBlock6Input.val(timeBlock6Data);
+timeBlock7Input.val(timeBlock7Data);
+timeBlock8Input.val(timeBlock8Data);
+timeBlock9Input.val(timeBlock9Data);
 
-var timeBlockData = [ timeBlock1Data, timeBlock2Data, timeBlock3Data, timeBlock4Data, timeBlock5Data, timeBlock6Data, timeBlock7Data, timeBlock8Data, timeBlock9Data];
+// variable to access the timeblock button
+var timeBlock1Btn = document.getElementById("timeBlock-1-Btn");
+var timeBlock2Btn = document.getElementById("timeBlock-2-Btn");
+var timeBlock3Btn = document.getElementById("timeBlock-3-Btn");
+var timeBlock4Btn = document.getElementById("timeBlock-4-Btn");
+var timeBlock5Btn = document.getElementById("timeBlock-5-Btn");
+var timeBlock6Btn = document.getElementById("timeBlock-6-Btn");
+var timeBlock7Btn = document.getElementById("timeBlock-7-Btn");
+var timeBlock8Btn = document.getElementById("timeBlock-8-Btn");
+var timeBlock9Btn = document.getElementById("timeBlock-9-Btn");
 
-for (var i = 0; i < timeBlockData.length; i++) {
-        console.log(timeBlockData[i]);
-}
+
+// Event listener for the timeblock button to 
+timeBlock1Btn.addEventListener("click", addAnswerToLocalStorage);
+timeBlock2Btn.addEventListener("click", addAnswerToLocalStorage);
+timeBlock3Btn.addEventListener("click", addAnswerToLocalStorage);
+timeBlock4Btn.addEventListener("click", addAnswerToLocalStorage);
+timeBlock5Btn.addEventListener("click", addAnswerToLocalStorage);
+timeBlock6Btn.addEventListener("click", addAnswerToLocalStorage);
+timeBlock7Btn.addEventListener("click", addAnswerToLocalStorage);
+timeBlock8Btn.addEventListener("click", addAnswerToLocalStorage);
+timeBlock9Btn.addEventListener("click", addAnswerToLocalStorage);
+
+// Function to add input to local storage
+function addAnswerToLocalStorage() {
+        let value1 = timeBlock1Input.val();
+        let value2 = timeBlock2Input.val();
+        let value3 = timeBlock3Input.val();
+        let value4 = timeBlock4Input.val();
+        let value5 = timeBlock5Input.val();
+        let value6 = timeBlock6Input.val();
+        let value7 = timeBlock7Input.val();
+        let value8 = timeBlock8Input.val();
+        let value9 = timeBlock9Input.val();
+        // Set Time block input key to #timeBlock-1" input and name it according to the first object in the array "var officeTimes"
+localStorage.setItem(officeTimes[0], value1);
+localStorage.setItem(officeTimes[1], value2);
+localStorage.setItem(officeTimes[2], value3);
+localStorage.setItem(officeTimes[3], value4);
+localStorage.setItem(officeTimes[4], value5);
+localStorage.setItem(officeTimes[5], value6);
+localStorage.setItem(officeTimes[6], value7);
+localStorage.setItem(officeTimes[7], value8);
+localStorage.setItem(officeTimes[8], value9);
+};
+
+
+
+
+
+
+// // var lastInput = localStorage.getItem("timeBlock-1");
+
+// // Use a for loop for the above to work for all input fields
+
+// var timeBlock1Input = $("#timeBlock-1");
+// var timeBlock2Input = $("#timeBlock-2");
+// var timeBlock3Input = $("#timeBlock-3");
+// var timeBlock4Input = $("#timeBlock-4");
+// var timeBlock5Input = $("#timeBlock-5");
+// var timeBlock6Input = $("#timeBlock-6");
+// var timeBlock7Input = $("#timeBlock-7");
+// var timeBlock8Input = $("#timeBlock-8");
+// var timeBlock9Input = $("#timeBlock-9");
+
+// var timeBlockInput = [ timeBlock1Input, timeBlock2Input, timeBlock3Input, timeBlock4Input, timeBlock5Input, timeBlock6Input, timeBlock7Input, timeBlock8Input, timeBlock9Input];
+
+// for (var i = 0; i < timeBlockInput.length; i++) {
+//         console.log(timeBlockInput[i]);
+// }
+
+// var timeBlock1Data = window.localStorage.getItem(officeTimes[0]);
+// var timeBlock2Data = window.localStorage.getItem(officeTimes[1]);
+// var timeBlock3Data = window.localStorage.getItem(officeTimes[2]);
+// var timeBlock4Data = window.localStorage.getItem(officeTimes[3]);
+// var timeBlock5Data = window.localStorage.getItem(officeTimes[4]);
+// var timeBlock6Data = window.localStorage.getItem(officeTimes[5]);
+// var timeBlock7Data = window.localStorage.getItem(officeTimes[6]);
+// var timeBlock8Data = window.localStorage.getItem(officeTimes[7]);
+// var timeBlock9Data = window.localStorage.getItem(officeTimes[8]);
+
+// var timeBlockData = [ timeBlock1Data, timeBlock2Data, timeBlock3Data, timeBlock4Data, timeBlock5Data, timeBlock6Data, timeBlock7Data, timeBlock8Data, timeBlock9Data];
+
+// for (var i = 0; i < timeBlockData.length; i++) {
+//         console.log(timeBlockData[i]);
+// }
+
 
 
 // timeBlock1Input.textContent = lastInput.timeBlock1Input;
