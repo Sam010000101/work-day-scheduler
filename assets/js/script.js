@@ -136,41 +136,91 @@ var timeBlock9Btn = document.getElementById("timeBlock-9-Btn");
 
 
 // Event listener for the timeblock button to 
-timeBlock1Btn.addEventListener("click", addAnswerToLocalStorage);
-timeBlock2Btn.addEventListener("click", addAnswerToLocalStorage);
-timeBlock3Btn.addEventListener("click", addAnswerToLocalStorage);
-timeBlock4Btn.addEventListener("click", addAnswerToLocalStorage);
-timeBlock5Btn.addEventListener("click", addAnswerToLocalStorage);
-timeBlock6Btn.addEventListener("click", addAnswerToLocalStorage);
-timeBlock7Btn.addEventListener("click", addAnswerToLocalStorage);
-timeBlock8Btn.addEventListener("click", addAnswerToLocalStorage);
-timeBlock9Btn.addEventListener("click", addAnswerToLocalStorage);
+timeBlock1Btn.addEventListener("click", addAnswerToLocalStorageBlock1);
+timeBlock2Btn.addEventListener("click", addAnswerToLocalStorageBlock2);
+timeBlock3Btn.addEventListener("click", addAnswerToLocalStorageBlock3);
+timeBlock4Btn.addEventListener("click", addAnswerToLocalStorageBlock4);
+timeBlock5Btn.addEventListener("click", addAnswerToLocalStorageBlock5);
+timeBlock6Btn.addEventListener("click", addAnswerToLocalStorageBlock6);
+timeBlock7Btn.addEventListener("click", addAnswerToLocalStorageBlock7);
+timeBlock8Btn.addEventListener("click", addAnswerToLocalStorageBlock8);
+timeBlock9Btn.addEventListener("click", addAnswerToLocalStorageBlock9);
 
-// Function to add input to local storage
-function addAnswerToLocalStorage() {
+
+
+// let value3 = timeBlock3Input.val();
+// let value4 = timeBlock4Input.val();
+// let value5 = timeBlock5Input.val();
+// let value6 = timeBlock6Input.val();
+// let value7 = timeBlock7Input.val();
+// let value8 = timeBlock8Input.val();
+// let value9 = timeBlock9Input.val();
+
+// Functions to add inputs to local storage
+function addAnswerToLocalStorageBlock1() {
+
         let value1 = timeBlock1Input.val();
-        let value2 = timeBlock2Input.val();
-        let value3 = timeBlock3Input.val();
-        let value4 = timeBlock4Input.val();
-        let value5 = timeBlock5Input.val();
-        let value6 = timeBlock6Input.val();
-        let value7 = timeBlock7Input.val();
-        let value8 = timeBlock8Input.val();
-        let value9 = timeBlock9Input.val();
-        // Set Time block input key to #timeBlock-1" input and name it according to the first object in the array "var officeTimes"
 localStorage.setItem(officeTimes[0], value1);
+};
+
+function addAnswerToLocalStorageBlock2() {
+
+        let value2 = timeBlock2Input.val();
 localStorage.setItem(officeTimes[1], value2);
+};
+
+function addAnswerToLocalStorageBlock3() {
+
+        let value3 = timeBlock3Input.val();
 localStorage.setItem(officeTimes[2], value3);
+};
+
+function addAnswerToLocalStorageBlock4() {
+
+        let value4 = timeBlock4Input.val();
 localStorage.setItem(officeTimes[3], value4);
+};
+
+function addAnswerToLocalStorageBlock5() {
+
+        let value5 = timeBlock5Input.val();
 localStorage.setItem(officeTimes[4], value5);
+};
+
+function addAnswerToLocalStorageBlock6() {
+
+        let value6 = timeBlock6Input.val();
 localStorage.setItem(officeTimes[5], value6);
+};
+
+function addAnswerToLocalStorageBlock7() {
+
+        let value7 = timeBlock7Input.val();
 localStorage.setItem(officeTimes[6], value7);
+};
+
+function addAnswerToLocalStorageBlock8() {
+
+        let value8 = timeBlock8Input.val();
 localStorage.setItem(officeTimes[7], value8);
+};
+
+function addAnswerToLocalStorageBlock9() {
+
+        let value9 = timeBlock9Input.val();
 localStorage.setItem(officeTimes[8], value9);
 };
 
 
 
+// localStorage.setItem(officeTimes[1], value2);
+// localStorage.setItem(officeTimes[2], value3);
+// localStorage.setItem(officeTimes[3], value4);
+// localStorage.setItem(officeTimes[4], value5);
+// localStorage.setItem(officeTimes[5], value6);
+// localStorage.setItem(officeTimes[6], value7);
+// localStorage.setItem(officeTimes[7], value8);
+// localStorage.setItem(officeTimes[8], value9);
 
 
 
