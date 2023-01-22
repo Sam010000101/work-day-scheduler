@@ -1,52 +1,26 @@
 // 1. Display the current day at the top of the calender when a user opens the planner.
-
-// Variable that holds the current day in the required format using moment.js function
+// ------------------------------------------------------------------------------------
+// Variable referencing the current day in the required format using Moment.js function
 var currentDay = moment().format('dddd, MMMM Do');
-// append today's date to <p id="currentDay" class="lead">append here</p>
+// Today's date appended to DOM element <p id="currentDay" class="lead">append here</p> using JQuery
 $( "#currentDay" ).append(currentDay);
-
+// ------------------------------------------------------------------------------------
 
 // 2. Present timeblocks for standard business hours when the user scrolls down.
+//      &
 // 3. Color-code each timeblock based on past, present, and future when the timeblock is viewed.
+// ------------------------------------------------------------------------------------
 
-// Variable that stores the current hour
+// Variable referencing the current hour from Moment.js 
 var currentHourEl = moment().format('HH');
+// // Set the time hour here to test the asignment of classes relating to current time (i.e. 'trick' the app into thinking it's a paticular hour of the day)
 // var currentHourEl = '08';
-console.log(currentHourEl)
+// console.log(currentHourEl)
 
-// Create array with office times (these times can be altered to suit out of office times)
+// Create array with office times (these times can be altered to suit the user. NB. Be sure to change the hour strings in timeBlockHrEl to match this variable)
 var officeTimes = ['9AM', '10AM', '11AM', '12PM', '1PM', '2PM', '3PM', '4PM', '5PM'];
 
-// create variables that get time block hour by id
-var timeBlock1HrEl = document.getElementById("timeBlockHour-1");
-var timeBlock1HrEl = document.getElementById("timeBlockHour-2");
-var timeBlock1HrEl = document.getElementById("timeBlockHour-3");
-var timeBlock1HrEl = document.getElementById("timeBlockHour-4");
-var timeBlock1HrEl = document.getElementById("timeBlockHour-5");
-var timeBlock1HrEl = document.getElementById("timeBlockHour-6");
-var timeBlock1HrEl = document.getElementById("timeBlockHour-7");
-var timeBlock1HrEl = document.getElementById("timeBlockHour-8");
-var timeBlock1HrEl = document.getElementById("timeBlockHour-9");
-
-// re-asign variables with hour strings
-// timeBlock1HrEl = '09';
-// timeBlock2HrEl = '10';
-// timeBlock3HrEl = '11';
-// timeBlock4HrEl = '12';
-// timeBlock5HrEl = '13';
-// timeBlock6HrEl = '14';
-// timeBlock7HrEl = '15';
-// timeBlock8HrEl = '16';
-// timeBlock9HrEl = '17';
-
-// create array with hour strings
-var timeBlockHrEl = [ '09', '10', '11', '12', '13', '14', '15', '16', '17'];
-
-// for (var i = 0; i < timeBlockHrEl.length; i++) {
-//         console.log(timeBlockHrEl[i]);
-//     }
-
-// append "officeTimes" to id #timeBlockHour-x frm officeTimes array
+// Append "officeTimes" to their respective id #timeBlockHour-X
 var TimeBlock9am = $( "#timeBlockHour-1" ).append(officeTimes[0]);
 var TimeBlock10am = $( "#timeBlockHour-2" ).append(officeTimes[1]);
 var TimeBlock11am = $( "#timeBlockHour-3" ).append(officeTimes[2]);
@@ -57,7 +31,7 @@ var TimeBlock3pm = $( "#timeBlockHour-7" ).append(officeTimes[6]);
 var TimeBlock4pm = $( "#timeBlockHour-8" ).append(officeTimes[7]);
 var TimeBlock5pm = $( "#timeBlockHour-9" ).append(officeTimes[8]);
 
-// create variables that get time blocks by id
+// Create variables that get time blocks by their id
 var timeBlock1El = document.getElementById("timeBlock-1");
 var timeBlock2El = document.getElementById("timeBlock-2");
 var timeBlock3El = document.getElementById("timeBlock-3");
@@ -68,11 +42,15 @@ var timeBlock7El = document.getElementById("timeBlock-7");
 var timeBlock8El = document.getElementById("timeBlock-8");
 var timeBlock9El = document.getElementById("timeBlock-9");
 
+// Create array that references "getElementById" for each time block id
 var timeBlockEl = [ timeBlock1El, timeBlock2El, timeBlock3El, timeBlock4El, timeBlock5El, timeBlock6El, timeBlock7El, timeBlock8El, timeBlock9El ];
 
-for (var i = 0; i < timeBlockEl.length; i++) {
+// Create array containing hour strings in chronological order
+var timeBlockHrEl = [ '09', '10', '11', '12', '13', '14', '15', '16', '17'];
 
-// add css classes to time blocks based on whether their 'hour string' is in the past, present of future when compared to the currentHourEl
+// Iterate through the timeBlockEl array 
+for (var i = 0; i < timeBlockEl.length; i++) {
+// add css classes to time blocks based on whether the corresponding 'hour string' is in the past, present or future when compared to the currentHourEl
 if (currentHourEl > timeBlockHrEl[i]) {
         timeBlockEl[i].classList.add("past"); 
 } else if (currentHourEl == timeBlockHrEl[i]) {
@@ -82,48 +60,12 @@ if (currentHourEl > timeBlockHrEl[i]) {
         };
 };
 
-// timeBlock1El.classList.add("past");
-// timeBlock2El.classList.add("present");
-// timeBlock3El.classList.add("future");
-
 
 // 4. Allow a user to enter an event when they click a timeblock
-
+//      &
 // 5. Save the event in local storage when the save button is clicked in that timeblock.
 
-// variable to access the timeblock input
-var timeBlock1Input = $("#timeBlock-1");
-var timeBlock2Input = $("#timeBlock-2");
-var timeBlock3Input = $("#timeBlock-3");
-var timeBlock4Input = $("#timeBlock-4");
-var timeBlock5Input = $("#timeBlock-5");
-var timeBlock6Input = $("#timeBlock-6");
-var timeBlock7Input = $("#timeBlock-7");
-var timeBlock8Input = $("#timeBlock-8");
-var timeBlock9Input = $("#timeBlock-9");
-// variable to get the local storage Key as named according to the first object in the array "var officeTimes"
-var timeBlock1Data = window.localStorage.getItem(officeTimes[0]);
-var timeBlock2Data = window.localStorage.getItem(officeTimes[1]);
-var timeBlock3Data = window.localStorage.getItem(officeTimes[2]);
-var timeBlock4Data = window.localStorage.getItem(officeTimes[3]);
-var timeBlock5Data = window.localStorage.getItem(officeTimes[4]);
-var timeBlock6Data = window.localStorage.getItem(officeTimes[5]);
-var timeBlock7Data = window.localStorage.getItem(officeTimes[6]);
-var timeBlock8Data = window.localStorage.getItem(officeTimes[7]);
-var timeBlock9Data = window.localStorage.getItem(officeTimes[8]);
-// console.log(window.localStorage);
-// Set the value for the input for id "#timeBlock-1" 
-timeBlock1Input.val(timeBlock1Data);
-timeBlock2Input.val(timeBlock2Data);
-timeBlock3Input.val(timeBlock3Data);
-timeBlock4Input.val(timeBlock4Data);
-timeBlock5Input.val(timeBlock5Data);
-timeBlock6Input.val(timeBlock6Data);
-timeBlock7Input.val(timeBlock7Data);
-timeBlock8Input.val(timeBlock8Data);
-timeBlock9Input.val(timeBlock9Data);
-
-// variable to access the timeblock button
+// Variables to access the timeblock save buttons
 var timeBlock1Btn = document.getElementById("timeBlock-1-Btn");
 var timeBlock2Btn = document.getElementById("timeBlock-2-Btn");
 var timeBlock3Btn = document.getElementById("timeBlock-3-Btn");
@@ -134,8 +76,7 @@ var timeBlock7Btn = document.getElementById("timeBlock-7-Btn");
 var timeBlock8Btn = document.getElementById("timeBlock-8-Btn");
 var timeBlock9Btn = document.getElementById("timeBlock-9-Btn");
 
-
-// Event listener for the timeblock button to 
+// Event listener for the timeblock save buttons, each button will trigger the respective function when 'clicked'
 timeBlock1Btn.addEventListener("click", addAnswerToLocalStorageBlock1);
 timeBlock2Btn.addEventListener("click", addAnswerToLocalStorageBlock2);
 timeBlock3Btn.addEventListener("click", addAnswerToLocalStorageBlock3);
@@ -146,17 +87,7 @@ timeBlock7Btn.addEventListener("click", addAnswerToLocalStorageBlock7);
 timeBlock8Btn.addEventListener("click", addAnswerToLocalStorageBlock8);
 timeBlock9Btn.addEventListener("click", addAnswerToLocalStorageBlock9);
 
-
-
-// let value3 = timeBlock3Input.val();
-// let value4 = timeBlock4Input.val();
-// let value5 = timeBlock5Input.val();
-// let value6 = timeBlock6Input.val();
-// let value7 = timeBlock7Input.val();
-// let value8 = timeBlock8Input.val();
-// let value9 = timeBlock9Input.val();
-
-// Functions to add inputs to local storage
+// Functions to set the inputs to local storage
 function addAnswerToLocalStorageBlock1() {
 
         let value1 = timeBlock1Input.val();
@@ -212,83 +143,40 @@ localStorage.setItem(officeTimes[8], value9);
 };
 
 
+// Variables to get the timeblock inputs using jQuery equivalent of vanilla js "document.getElementById"
+var timeBlock1Input = $("#timeBlock-1");
+var timeBlock2Input = $("#timeBlock-2");
+var timeBlock3Input = $("#timeBlock-3");
+var timeBlock4Input = $("#timeBlock-4");
+var timeBlock5Input = $("#timeBlock-5");
+var timeBlock6Input = $("#timeBlock-6");
+var timeBlock7Input = $("#timeBlock-7");
+var timeBlock8Input = $("#timeBlock-8");
+var timeBlock9Input = $("#timeBlock-9");
 
-// localStorage.setItem(officeTimes[1], value2);
-// localStorage.setItem(officeTimes[2], value3);
-// localStorage.setItem(officeTimes[3], value4);
-// localStorage.setItem(officeTimes[4], value5);
-// localStorage.setItem(officeTimes[5], value6);
-// localStorage.setItem(officeTimes[6], value7);
-// localStorage.setItem(officeTimes[7], value8);
-// localStorage.setItem(officeTimes[8], value9);
+// Variables to get the stored input values from local storage, fires after page reload
+var timeBlock1Data = window.localStorage.getItem(officeTimes[0]);
+var timeBlock2Data = window.localStorage.getItem(officeTimes[1]);
+var timeBlock3Data = window.localStorage.getItem(officeTimes[2]);
+var timeBlock4Data = window.localStorage.getItem(officeTimes[3]);
+var timeBlock5Data = window.localStorage.getItem(officeTimes[4]);
+var timeBlock6Data = window.localStorage.getItem(officeTimes[5]);
+var timeBlock7Data = window.localStorage.getItem(officeTimes[6]);
+var timeBlock8Data = window.localStorage.getItem(officeTimes[7]);
+var timeBlock9Data = window.localStorage.getItem(officeTimes[8]);
+// console.log(window.localStorage.getItem(officeTimes[0]));
+// console.log(window.localStorage);
 
+// Set the value of each time block input to the corresponding value set in local storage, fires after page reload
+timeBlock1Input.val(timeBlock1Data);
+timeBlock2Input.val(timeBlock2Data);
+timeBlock3Input.val(timeBlock3Data);
+timeBlock4Input.val(timeBlock4Data);
+timeBlock5Input.val(timeBlock5Data);
+timeBlock6Input.val(timeBlock6Data);
+timeBlock7Input.val(timeBlock7Data);
+timeBlock8Input.val(timeBlock8Data);
+timeBlock9Input.val(timeBlock9Data);
+console.log(timeBlock1Input.val());
+// console.log(timeBlock1Data);
 
-
-// // var lastInput = localStorage.getItem("timeBlock-1");
-
-// // Use a for loop for the above to work for all input fields
-
-// var timeBlock1Input = $("#timeBlock-1");
-// var timeBlock2Input = $("#timeBlock-2");
-// var timeBlock3Input = $("#timeBlock-3");
-// var timeBlock4Input = $("#timeBlock-4");
-// var timeBlock5Input = $("#timeBlock-5");
-// var timeBlock6Input = $("#timeBlock-6");
-// var timeBlock7Input = $("#timeBlock-7");
-// var timeBlock8Input = $("#timeBlock-8");
-// var timeBlock9Input = $("#timeBlock-9");
-
-// var timeBlockInput = [ timeBlock1Input, timeBlock2Input, timeBlock3Input, timeBlock4Input, timeBlock5Input, timeBlock6Input, timeBlock7Input, timeBlock8Input, timeBlock9Input];
-
-// for (var i = 0; i < timeBlockInput.length; i++) {
-//         console.log(timeBlockInput[i]);
-// }
-
-// var timeBlock1Data = window.localStorage.getItem(officeTimes[0]);
-// var timeBlock2Data = window.localStorage.getItem(officeTimes[1]);
-// var timeBlock3Data = window.localStorage.getItem(officeTimes[2]);
-// var timeBlock4Data = window.localStorage.getItem(officeTimes[3]);
-// var timeBlock5Data = window.localStorage.getItem(officeTimes[4]);
-// var timeBlock6Data = window.localStorage.getItem(officeTimes[5]);
-// var timeBlock7Data = window.localStorage.getItem(officeTimes[6]);
-// var timeBlock8Data = window.localStorage.getItem(officeTimes[7]);
-// var timeBlock9Data = window.localStorage.getItem(officeTimes[8]);
-
-// var timeBlockData = [ timeBlock1Data, timeBlock2Data, timeBlock3Data, timeBlock4Data, timeBlock5Data, timeBlock6Data, timeBlock7Data, timeBlock8Data, timeBlock9Data];
-
-// for (var i = 0; i < timeBlockData.length; i++) {
-//         console.log(timeBlockData[i]);
-// }
-
-
-
-// timeBlock1Input.textContent = lastInput.timeBlock1Input;
-
-// console.log(localStorage);
-
-// get most recent submission
-
-// renderLastRegistered();
-
-// function renderLastRegistered() {
-//         timeBlock1Input = localStorage.getItem("timeBlock-1");
-
-      
-//         timeBlock1Input.textContent = timeBlock1Input;
-
-//       }
-
-
-// var timeBlock1Input = document.querySelector("#timeBlock-1");
-
-// $( "#timeBlock-1-Btn").click(function() {
-//         alert("Hey");
-// });
-
-// localStorage.setItem("timeBlock-1", timeBlock1Input);
-
-// console.log("#timeBlock-1");
-// console.log(value);
-
-// console.log(timeBlock1Btn);
-// console.log(timeBlock1Input);
