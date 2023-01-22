@@ -177,6 +177,6 @@ timeBlock6Input.val(timeBlock6Data);
 timeBlock7Input.val(timeBlock7Data);
 timeBlock8Input.val(timeBlock8Data);
 timeBlock9Input.val(timeBlock9Data);
-console.log(timeBlock1Input.val());
+// console.log(timeBlock1Input.val());
 // console.log(timeBlock1Data);
 
